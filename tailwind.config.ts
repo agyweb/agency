@@ -18,10 +18,22 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        "10m": "1059px",
+        "9m": "930px",
+        "8m": "830px",
+        "7m": "730px",
+        "6m": "630px",
+        "5m": "530px",
+        "4m": "430px",
+        "3m": "330px",
+        "2m": "230px",
+      },
       colors: {
         ornge: "#FF6314",
         gry: "#F4F4F4",
         black: "#0D0E13",
+        foreground: "hsl(var(--foreground))",
       },
       fontFamily: {
         satoshi: "var(--satoshi-font)",
@@ -40,6 +52,10 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      transitionTimingFunction: {
+        slow: "cubic-bezier(.405, 0, .025, 1)",
+        "minor-spring": "cubic-bezier(0.18,0.89,0.82,1.04)",
       },
     },
   },

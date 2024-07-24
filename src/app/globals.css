@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 .hero_text {
   background-image: linear-gradient(to right, #702b08 1%, #ff6314 100%);
+}
+
+@media (max-height: 720px) {
+  .test-p {
+    @apply text-[28px];
+  }
 }
