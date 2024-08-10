@@ -22,7 +22,7 @@ export default function ArrowButton({
     <button
       {...props}
       className={cn(
-        "group relative inline-flex size-20 items-center justify-center overflow-hidden rounded-full bg-black font-medium shadow-md transition duration-300 ease-out it:size-24 sm:size-28 md:size-32 lg:size-36",
+        "group relative inline-flex size-24 items-center justify-center overflow-hidden rounded-full bg-black font-medium shadow-md transition duration-300 ease-out sm:size-28 md:size-32 lg:size-36",
         className,
       )}
     >
@@ -38,7 +38,7 @@ export default function ArrowButton({
           height="34"
           viewBox="0 0 37 34"
           fill="none"
-          className="size-6 it:size-8 sm:size-9 md:size-10 lg:size-12"
+          className="it:size-8 size-6 sm:size-9 md:size-10 lg:size-12"
         >
           <path
             d="M1.17306 32.9588C1.17306 32.9588 19.2543 16.174 35.5617 1.03601M35.5617 1.03601C23.7813 11.9716 10.4339 1.9542 10.4339 1.9542M35.5617 1.03601C23.7813 11.9716 32.7798 26.0262 32.7798 26.0262"

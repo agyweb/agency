@@ -54,15 +54,13 @@ export default function SwapText({
   ...props
 }: SwapTextProps) {
   const [active, setActive] = useState(false);
-  const common = "block transition-all duration-700 ease-slow";
+  const common =
+    "block transition-all duration-700 ease-slow mix-blend-difference";
 
   const longWord = finalText.length > initialText.length ? finalText : null;
 
   return (
-    <div
-      {...props}
-      className={cn("relative overflow-hidden text-foreground", className)}
-    >
+    <div {...props} className={cn("relative overflow-hidden", className)}>
       <div
         className={cn(
           "Capitalize group cursor-pointer select-none text-sm font-medium md:text-base",
