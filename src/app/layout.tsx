@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import Header from "@/components/header";
+import SmoothScroll from "@/components/smooth-scroll";
 
 const satoshi = localFont({
   src: [
@@ -48,9 +50,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${satoshi.variable} ${swearDisplay.variable} font-satoshi`}
+        className={`${satoshi.variable} ${swearDisplay.variable} scrollbar-hidden relative overflow-x-hidden font-satoshi`}
       >
+        <Header />
         {children}
+        <SmoothScroll />
       </body>
     </html>
   );

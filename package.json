@@ -9,15 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@firecms/neat": "^0.2.2",
+    "@plaiceholder/next": "^3.0.0",
+    "@studio-freight/lenis": "^1.0.42",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.10",
     "lucide-react": "^0.394.0",
     "next": "14.2.4",
+    "plaiceholder": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-tilt": "^1.0.2",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "three.js": "^0.77.1",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "^20",

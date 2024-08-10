@@ -23,6 +23,10 @@ const config = {
         gry: "#F4F4F4",
         black: "#0D0E13",
       },
+      screens: {
+        "5m": "500px",
+        "1m": "1100px",
+      },
       fontFamily: {
         satoshi: "var(--satoshi-font)",
         swearDisplay: "var(--swear-display-font)",
