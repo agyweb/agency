@@ -1,11 +1,9 @@
-"use client";
-import Hero from "@/components/hero";
-import { motion, useMotionTemplate } from "framer-motion";
+import HeroComp from "@/components/hero";
 
 export default function page() {
   return (
     <div>
-      <Hero />
+      <HeroComp />
     </div>
   );
 }

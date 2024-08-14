@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.heroHeight {
+  height: calc(100dvh - 120px);
+}
+
 .hero_text {
   background-image: linear-gradient(to right, #702b08 1%, #ff6314 100%);
 }

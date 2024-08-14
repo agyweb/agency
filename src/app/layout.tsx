@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import HeaderComp from "@/components/header";
 
 const satoshi = localFont({
   src: [
@@ -50,6 +51,7 @@ export default function RootLayout({
       <body
         className={`${satoshi.variable} ${swearDisplay.variable} font-satoshi`}
       >
+        <HeaderComp />
         {children}
       </body>
     </html>
