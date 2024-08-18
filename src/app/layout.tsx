@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${satoshi.variable} ${swearDisplay.variable} font-satoshi`}
+        className={`relative ${satoshi.variable} ${swearDisplay.variable} h-[3000px] font-satoshi`}
       >
         <HeaderComp />
         {children}

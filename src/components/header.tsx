@@ -11,6 +11,7 @@ import { useState } from "react";
 export default function HeaderComp() {
   const [isHidden, setIsHidden] = useState<boolean>(false);
   const { scrollY } = useScroll();
+
   useMotionValueEvent(scrollY, "change", (currScrollVal) => {
     const prevScrollVal = scrollY.getPrevious()!;
 
@@ -22,16 +23,17 @@ export default function HeaderComp() {
   });
 
   return (
-    <div className="container max-w-[1300px]">
-      <motion.nav
-        variants={{
-          visible: { y: 0 },
-          hidden: { y: "-100%" },
-        }}
-        animate={isHidden ? "hidden" : "visible"}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="bg-blur sticky top-0 z-[60] flex w-full items-center justify-between py-10"
-      >
+    <motion.div
+      initial={{ y: "-100%", opacity: 0, filter: "blur(10px)" }}
+      animate={{
+        y: isHidden ? "-100%" : 0,
+        opacity: isHidden ? 0 : 1,
+        filter: isHidden ? "blur(10px)" : "blur(0px)",
+      }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="fixed top-0 z-[60] w-full"
+    >
+      <motion.nav className="bg-blur container flex max-w-[1300px] items-center justify-between py-10">
         <a href="/">
           <Image
             src={logo}
@@ -63,6 +65,6 @@ export default function HeaderComp() {
           />
         </div>
       </motion.nav>
-    </div>
+    </motion.div>
   );
 }
