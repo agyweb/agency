@@ -6,11 +6,24 @@ import { links } from "@/constants/links";
 import SwapText from "./animata/text/swap-text";
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function HeaderComp() {
   const [isHidden, setIsHidden] = useState<boolean>(false);
+  const [isTopPage, setIsTopPage] = useState<boolean>(true);
   const { scrollY } = useScroll();
+  const path = usePathname();
+
+  useEffect(() => {
+    const navLinks = document.querySelectorAll(".navLink");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        document.querySelector(".activeLink")?.classList.remove("activeLink");
+        link.classList.add("activeLink");
+      });
+    });
+  }, []);
 
   useMotionValueEvent(scrollY, "change", (currScrollVal) => {
     const prevScrollVal = scrollY.getPrevious()!;
@@ -20,20 +33,25 @@ export default function HeaderComp() {
     } else {
       setIsHidden(false);
     }
+
+    if (currScrollVal === 0) {
+      setIsTopPage(true);
+    } else {
+      setIsTopPage(false);
+    }
   });
 
   return (
     <motion.div
-      initial={{ y: "-100%", opacity: 0, filter: "blur(10px)" }}
+      initial={{ y: "-100%", opacity: 0 }}
       animate={{
         y: isHidden ? "-100%" : 0,
         opacity: isHidden ? 0 : 1,
-        filter: isHidden ? "blur(10px)" : "blur(0px)",
       }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="fixed top-0 z-[60] w-full"
+      className={`fixed top-0 z-[60] w-full ${isTopPage ? "" : "bg-blur"}`}
     >
-      <motion.nav className="bg-blur container flex max-w-[1300px] items-center justify-between py-10">
+      <motion.nav className="container flex max-w-[1300px] items-center justify-between py-7">
         <a href="/">
           <Image
             src={logo}
@@ -44,16 +62,20 @@ export default function HeaderComp() {
         </a>
 
         <div className="hidden items-center gap-x-7 sm:flex">
-          {links.map((link, i) => (
-            <a key={i} href={`/${link.href}`}>
-              <SwapText
-                initialText={link.name}
-                finalText={link.name}
-                textClassName="text-black"
-                finalTextClassName="text-ornge"
-              />
-            </a>
-          ))}
+          {links.map((link: any, i) => {
+            const isActive =
+              path === `/${link.href}` || (path === "/" && link.href === "");
+            return (
+              <a key={i} href={`/${link.href}`} className="navLink">
+                <SwapText
+                  className="text-inherit"
+                  initialText={link.name}
+                  finalText={link.name}
+                  finalTextClassName="text-ornge"
+                />
+              </a>
+            );
+          })}
         </div>
 
         <div className="block sm:hidden">

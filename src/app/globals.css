@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.navLink {
+  @apply text-black;
+}
+
+.navLink.activeLink {
+  @apply text-ornge;
+}
+
+.bg-blur {
+  backdrop-filter: blur(4px);
+}
+
 .heroHeight {
   height: calc(100dvh - 120px);
 }
