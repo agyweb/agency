@@ -63,10 +63,10 @@ export default function SwapText({
     <div {...props} className={cn("relative overflow-hidden", className)}>
       <div
         className={cn(
-          "Capitalize group cursor-pointer select-none text-sm font-medium md:text-base",
+          "Capitalize group cursor-pointer select-none text-sm font-normal md:text-base",
           textClassName,
         )}
-        onClick={() => !disableClick && setActive((current) => !current)}
+        // onClick={() => !disableClick && setActive((current) => !current)}
       >
         <span
           className={cn(common, initialTextClassName, {

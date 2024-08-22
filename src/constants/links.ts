@@ -1,18 +1,18 @@
 export const links: LinkType[] = [
   {
-    name:'Services',
-    href:'#services'
+    name: "Services",
+    href: "#services",
   },
   {
-    name:'Work',
-    href:'#work'
+    name: "Work",
+    href: "#work",
   },
   {
-    name:'Why us',
-    href:'#why-us'
+    name: "Why us",
+    href: "#why-us",
   },
   {
-    name:'Contact',
-    href:'#contact'
-  }
-]
+    name: "Contact",
+    href: "#contact",
+  },
+];
