@@ -51,7 +51,9 @@ export default function HeaderComp() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 z-[60] w-full ${isTopPage ? "" : "bg-blur"}`}
     >
-      <motion.nav className="container flex max-w-[1300px] items-center justify-between py-7">
+      <motion.nav
+        className={`container flex max-w-[1300px] items-center justify-between ${isTopPage ? "py-7" : "py-4"}`}
+      >
         <a href="/">
           <Image
             src={logo}
