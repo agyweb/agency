@@ -8,6 +8,7 @@ import SwapText from "./animata/text/swap-text";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import Navbar from "./nav";
 
 export default function HeaderComp() {
   const [isHidden, setIsHidden] = useState<boolean>(false);
@@ -81,12 +82,7 @@ export default function HeaderComp() {
         </div>
 
         <div className="block sm:hidden">
-          <SwapText
-            initialText="Menu"
-            finalText="Menu"
-            textClassName="text-black"
-            finalTextClassName="text-ornge"
-          />
+          <Navbar />
         </div>
       </motion.nav>
     </motion.div>
