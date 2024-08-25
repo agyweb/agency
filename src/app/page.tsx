@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <div className="relative bg-white">
       <HeroServices />
-      {/* <Work /> */}
+      <Work />
       <WhyUs />
       <Footer />
     </div>
