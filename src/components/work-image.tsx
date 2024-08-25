@@ -13,8 +13,7 @@ type Props = {
 };
 
 export default async function WorkImage({ img, title }: Props) {
-  // const buffer = await fs.readFile(`./public/work/${img}.png`);
-  // const { base64 } = await getPlaiceholder(buffer);
+
 
   return (
     <div className="group h-auto w-auto cursor-pointer overflow-hidden rounded-md bg-black">
