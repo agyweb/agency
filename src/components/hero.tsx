@@ -16,8 +16,12 @@ export default function HeroComp() {
     setTimeout(() => backgroundY.set("0%"), 10);
   }, [backgroundY]);
 
+  const openEmail = () => {
+    window.location.href = `mailto:agywebservices@gmail.com`;
+  };
+
   return (
-    <div className="relative h-dvh overflow-hidden pt-[120px]">
+    <div className="hero relative h-dvh overflow-hidden pt-[120px]">
       <motion.div
         style={{
           backgroundImage,
@@ -84,6 +88,7 @@ export default function HeroComp() {
             </motion.p>
 
             <motion.div
+              onClick={openEmail}
               className="heroButton"
               initial={{ y: 80, opacity: 0, filter: "blur(10px)" }}
               animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}

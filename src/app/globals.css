@@ -1,6 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
 
 .linkStroke {
   -webkit-text-fill-color: transparent;
@@ -27,6 +46,80 @@
   background-image: linear-gradient(to right, #702b08 1%, #ff6314 100%);
 }
 
+.box {
+  @apply container max-w-[1300px];
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
+
+.services_container {
+  min-height: 300vh;
+  min-height: 300svh;
+}
+
+.services_cards {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+a[href="https://neat.firecms.co"]
+{
+  @apply !hidden;
+}
+
+.custom-shape-divider-top-1722976890 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1722976890 svg {
+  position: relative;
+  display: block;
+  width: calc(274% + 1.3px);
+  height: 154px;
+}
+
+/* .custom-shape-divider-top-1722976890 .shape-fill {
+  fill: #222;
+} */
+
+.underline_hover {
+  /* display: inline-flex; */
+  position: relative;
+  text-decoration: none;
+}
+.underline_hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: -15px;
+  left: 0;
+  background: currentcolor;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+.underline_hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* .bg-blur {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+} */
 @media (max-width: 512px) {
   .heroContainer {
     @apply gap-y-[3.5rem];
@@ -114,5 +207,11 @@
 
   .heroSubTitle {
     @apply text-base;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .cursor {
+    @apply hidden;
   }
 }

@@ -1,20 +1,26 @@
 "use client";
-
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import SwapText from "./animata/text/swap-text";
 import logo from "../../public/logo.png";
 import { links } from "@/constants/links";
-import SwapText from "./animata/text/swap-text";
-
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import Navbar from "./nav";
+import Link from "next/link";
 
 export default function HeaderComp() {
-  const [isHidden, setIsHidden] = useState<boolean>(false);
-  const [isTopPage, setIsTopPage] = useState<boolean>(true);
+  const [isHidden, setIsHidden] = useState(false);
+  const [isPastViewport, setIsPastViewport] = useState(false);
+  const [viewportHeight, setViewportHeight] = useState(0);
   const { scrollY } = useScroll();
   const path = usePathname();
+
+  useEffect(() => {
+    setViewportHeight(window.innerHeight);
+    const handleResize = () => setViewportHeight(window.innerHeight);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const navLinks = document.querySelectorAll(".navLink");
@@ -27,64 +33,106 @@ export default function HeaderComp() {
   }, []);
 
   useMotionValueEvent(scrollY, "change", (currScrollVal) => {
-    const prevScrollVal = scrollY.getPrevious()!;
-
-    if (currScrollVal > prevScrollVal) {
-      setIsHidden(true);
-    } else {
+    if (currScrollVal <= viewportHeight) {
       setIsHidden(false);
+      setIsPastViewport(false);
+      return;
     }
 
-    if (currScrollVal === 0) {
-      setIsTopPage(true);
-    } else {
-      setIsTopPage(false);
-    }
+    setIsPastViewport(true);
+    const prevScrollVal = scrollY.getPrevious()!;
+    setIsHidden(currScrollVal > prevScrollVal);
   });
+
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          } else if (activeSection === entry.target.id) {
+            // If this section is no longer intersecting and it was the active section, reset active state
+            setActiveSection("");
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+
+    links.forEach((link) => {
+      const element = document.querySelector(link.href);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [activeSection]);
 
   return (
     <motion.div
       initial={{ y: "-100%", opacity: 0 }}
       animate={{
-        y: isHidden ? "-100%" : 0,
-        opacity: isHidden ? 0 : 1,
+        y: 0,
+        opacity: 1,
       }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 z-[60] w-full ${isTopPage ? "" : "bg-blur"}`}
+      className="fixed top-0 z-[60] w-full"
     >
-      <motion.nav
-        className={`container flex max-w-[1300px] items-center justify-between ${isTopPage ? "py-7" : "py-4"}`}
+      <motion.div
+        animate={{
+          y: isPastViewport && isHidden ? "-100%" : 0,
+        }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className={`w-full ${isPastViewport ? "bg-[#ffffffa6] shadow-sm backdrop-blur-[7.6px]" : ""}`}
       >
-        <a href="/">
-          <Image
-            src={logo}
-            alt="agyweb logo"
-            quality={100}
-            className={"size-10"}
-          />
-        </a>
+        <nav
+          className={`container flex max-w-[1300px] items-center justify-between ${
+            isPastViewport ? "py-3" : "py-7"
+          }`}
+        >
+          <Link className="logo" href="/">
+            <Image
+              src={logo}
+              alt="agyweb logo"
+              quality={100}
+              className="size-10"
+            />
+          </Link>
 
-        <div className="hidden items-center gap-x-7 sm:flex">
-          {links.map((link: any, i) => {
-            const isActive =
-              path === `/${link.href}` || (path === "/" && link.href === "");
-            return (
-              <a key={i} href={`/${link.href}`} className="navLink">
-                <SwapText
-                  className="text-inherit"
-                  initialText={link.name}
-                  finalText={link.name}
-                  finalTextClassName="text-ornge"
-                />
-              </a>
-            );
-          })}
-        </div>
+          <div className="hidden items-center gap-x-7 sm:flex">
+            {links.map((link, i) => {
+              const isActive =
+                path === `/${link.href}` || (path === "/" && link.href === "");
+              return (
+                <Link
+                  key={i}
+                  href={`${link.href}`}
+                  className={`navLink ${
+                    activeSection === link.href.slice(1) ? "activeLink" : ""
+                  }`}
+                >
+                  <SwapText
+                    className="text-inherit"
+                    initialText={link.name}
+                    finalText={link.name}
+                    finalTextClassName="text-ornge"
+                  />
+                </Link>
+              );
+            })}
+          </div>
 
-        <div className="block sm:hidden">
-          <Navbar />
-        </div>
-      </motion.nav>
+          <div className="block sm:hidden">
+            <SwapText
+              initialText="Menu"
+              finalText="Menu"
+              textClassName="text-black"
+              finalTextClassName="text-ornge"
+            />
+          </div>
+        </nav>
+      </motion.div>
     </motion.div>
   );
 }
