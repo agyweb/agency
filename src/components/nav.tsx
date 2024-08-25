@@ -75,7 +75,7 @@ const Navbar = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 h-screen w-full origin-top bg-white px-8 py-[38px] text-black"
+            className="fixed left-0 top-0 z-[200] h-screen w-full origin-top bg-white px-8 py-[38px] text-black"
           >
             <div
               style={{

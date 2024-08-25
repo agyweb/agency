@@ -7,6 +7,7 @@ import SwapText from "./animata/text/swap-text";
 import logo from "../../public/logo.png";
 import { links } from "@/constants/links";
 import Link from "next/link";
+import Navbar from "./nav";
 
 export default function HeaderComp() {
   const [isHidden, setIsHidden] = useState(false);
@@ -124,12 +125,7 @@ export default function HeaderComp() {
           </div>
 
           <div className="block sm:hidden">
-            <SwapText
-              initialText="Menu"
-              finalText="Menu"
-              textClassName="text-black"
-              finalTextClassName="text-ornge"
-            />
+            <Navbar />
           </div>
         </nav>
       </motion.div>
