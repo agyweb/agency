@@ -1,0 +1,35 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": [
+    "src/app/**/*.{js,jsx,ts,tsx}",
+    "src/pages/**/*.{js,jsx,ts,tsx}",
+    "src/middleware.{js,ts}",
+    "src/types/**/*.{ts,tsx}"
+  ],
+  "project": ["src/**/*.{ts,tsx}"],
+  "ignoreDependencies": ["next"],
+  "ignore": [
+    "**/*.d.ts",
+    "src/components/ui/**"
+  ],
+  "rules": {
+    "files": "error",
+    "dependencies": "error",
+    "exports": "error",
+    "types": "error",
+    "enumMembers": "error",
+    "classMembers": "error"
+  },
+  "next": {
+    "entry": [
+      "src/app/**/{page,layout,loading,error,not-found,route,template}.{js,jsx,ts,tsx}",
+      "src/app/**/head.{js,jsx,ts,tsx}",
+      "src/pages/**/*.{js,jsx,ts,tsx}",
+      "src/middleware.{js,ts}"
+    ]
+  },
+  "ignoreExportsUsedInFile": {
+    "interface": false,
+    "type": false
+  }
+}
