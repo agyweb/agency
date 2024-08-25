@@ -1,181 +1,123 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { NeatGradient } from "@firecms/neat";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import logo from "../../public/logo-white.png";
 
 export const Footer = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const gradientRef = useRef<NeatGradient | null>(null);
-  const [isNearView, setIsNearView] = useState(false);
-
-  const createGradient = () => {
-    if (canvasRef.current && !gradientRef.current) {
-      console.log("Creating NeatGradient for MyComponent");
-      gradientRef.current = new NeatGradient({
-        ref: canvasRef.current,
-        colors: [
-          {
-            color: "#0D0E13",
-            enabled: true,
-          },
-          {
-            color: "#FF6314",
-            enabled: true,
-          },
-          {
-            color: "#0D0E13",
-            enabled: true,
-          },
-          {
-            color: "#FF6314",
-            enabled: true,
-          },
-          {
-            color: "#FF6314",
-            enabled: true,
-          },
-        ],
-        speed: 4,
-        horizontalPressure: 2,
-        verticalPressure: 2,
-        waveFrequencyX: 1,
-        waveFrequencyY: 2,
-        waveAmplitude: 7,
-        shadows: 4,
-        highlights: 5,
-        colorBrightness: 1,
-        colorSaturation: 2,
-        wireframe: false,
-        colorBlending: 5,
-        backgroundColor: "#FF6314",
-        backgroundAlpha: 1,
-        resolution: 1,
-      });
-    }
-  };
-
-  const destroyGradient = () => {
-    if (gradientRef.current) {
-      console.log("Destroying NeatGradient for MyComponent");
-      gradientRef.current.destroy();
-      gradientRef.current = null;
-    }
-  };
 
   useEffect(() => {
-    const options = {
-      rootMargin: "500px 0px 500px 0px",
-      threshold: 0,
-    };
+    if (!canvasRef.current) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsNearView(true);
-          console.log("Component is near view");
-        } else {
-          setIsNearView(false);
-          console.log("Component is far from view");
-        }
-      });
-    }, options);
+    gradientRef.current = new NeatGradient({
+      ref: canvasRef.current,
+      colors: [
+        {
+          color: "#0D0E13",
+          enabled: true,
+        },
+        {
+          color: "#FF6314",
+          enabled: true,
+        },
+        {
+          color: "#0D0E13",
+          enabled: true,
+        },
+        {
+          color: "#FF6314",
+          enabled: true,
+        },
+        {
+          color: "#FF6314",
+          enabled: true,
+        },
+      ],
+      speed: 4,
+      horizontalPressure: 2,
+      verticalPressure: 2,
+      waveFrequencyX: 1,
+      waveFrequencyY: 2,
+      waveAmplitude: 7,
+      shadows: 4,
+      highlights: 5,
+      colorBrightness: 1,
+      colorSaturation: 2,
+      wireframe: false,
+      colorBlending: 5,
+      backgroundColor: "#FF6314",
+      backgroundAlpha: 1,
+      resolution: 1,
+    });
 
-    const currentContainer = containerRef.current;
-
-    if (currentContainer) {
-      observer.observe(currentContainer);
-    }
-
-    return () => {
-      if (currentContainer) {
-        observer.unobserve(currentContainer);
-      }
-    };
+    return gradientRef.current.destroy;
   }, []);
 
-  useEffect(() => {
-    if (isNearView) {
-      createGradient();
-    } else {
-      destroyGradient();
-    }
-  }, [isNearView]);
-
-  useEffect(() => {
-    return () => {
-      destroyGradient();
-    };
-  }, []);
+  const openEmail = () => {
+    window.location.href = `mailto:agywebservices@gmail.com`;
+  };
 
   return (
     <div
-      className="relative h-svh"
+      className="ftr relative z-[100] h-dvh"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
+      id="contact"
     >
-      <div className="fixed bottom-0 z-[100] grid h-svh w-full place-items-center">
-        <div ref={containerRef} className="relative h-svh w-full text-black">
-          <motion.canvas
+      <div className="fixed bottom-0 z-[100] grid h-dvh w-full place-items-center">
+        <div ref={containerRef} className="relative h-dvh w-full text-black">
+          <canvas
             ref={canvasRef}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isNearView ? 1 : 0 }}
-            transition={{ duration: 0.5 }}
             className="absolute size-full bg-white"
             style={{ isolation: "isolate" }}
           />
 
           <div className="box relative z-50 h-full w-full overflow-x-hidden">
-            <div className="h-full w-full py-20 lg:py-24 text-left text-white">
-              <div className="flex h-full w-full flex-col justify-center bg-red-500 max-w-full">
+            <div className="h-full w-full py-20 text-left text-white lg:py-24">
+              <div className="flex h-full w-full max-w-full flex-col justify-center">
                 <div className="flex h-full w-full flex-col justify-between">
-
-
-
-                  <div className="flex items-center flex-wrap justify-between">
+                  <div className="flex items-center justify-between gap-y-5">
                     <div className="flex items-center gap-x-1">
                       {" "}
                       <Image
                         src={logo}
                         alt="agyweb logo"
                         quality={100}
-                        width={28}
-                        height={28}
-                        className={"!size-7"}
+                        className={"size-7 lg:size-9"}
                       />
-                      agyweb
+                      <span className="hidden sm:inline">agyweb</span>
                     </div>
 
-                    <div className="flex items-center gap-x-5">
-                      <div className="underline_hover after:-bottom-1 after:h-[1px]">
-                        LinkedIn
-                      </div>
-                      <div className="underline_hover after:-bottom-1 after:h-[1px]">
+                    <div className="flex items-center gap-x-5 text-[14px] md:gap-x-7 md:text-[15px] 9m:gap-x-8 lg:text-[16px]">
+                      <div className="underline_hover lnk after:-bottom-1 after:h-[1px] cursor-pointer">
                         Instagram
                       </div>
-                      <div className="underline_hover after:-bottom-1 after:h-[1px]">
-                        Dribble
+                      <div className="underline_hover lnk after:-bottom-1 after:h-[1px] cursor-pointer">
+                        LinkedIn
                       </div>
-                      <div className="underline_hover after:-bottom-1 after:h-[1px]">
+                      <div className="underline_hover lnk after:-bottom-1 after:h-[1px] cursor-pointer">
                         X/Twitter
                       </div>
                     </div>
                   </div>
 
-
-                  <div className="underline_hover group relative flex cursor-pointer items-end justify-between bg-green-500">
+                  <div
+                    className="underline_hover group relative flex cursor-pointer items-end justify-between"
+                    onClick={openEmail}
+                  >
                     <div className="space-y-5 lg:space-y-7">
-                      <p className="lg:pl-[6px] font-satoshi text-[13px] lg:text-[15px] tracking-tighter">
+                      <p className="font-satoshi text-[13px] tracking-tighter sm:text-[13.5px] md:text-[14px] 9m:text-[14.5px] lg:pl-[3px] lg:text-[16px]">
                         Got a project in mind ?
                       </p>
-                      <div className="text-3xl lg:text-8xl font-bold tracking-tight">
+                      <div className="text-4xl font-bold tracking-tight 5m:text-5xl sm:text-6xl md:text-[67px] 9m:text-[83px] lg:text-8xl">
                         CONTACT US
                       </div>
                     </div>
 
-                    <div className="mb-3 size-10 transition-all duration-300 group-hover:-translate-x-2 group-hover:rotate-[40deg]">
+                    <div className="mb-[2px] size-8 transition-all duration-300 group-hover:-translate-x-1 group-hover:rotate-[40deg] 5m:mb-0 5m:size-[40px] 5m:group-hover:-translate-x-[5px] sm:size-[50px] md:size-[58px] md:group-hover:-translate-x-[7px] 9m:mb-[2px] 9m:size-[69px] 9m:group-hover:-translate-x-[8px] lg:mb-0 lg:mt-[1px] lg:size-[82px] lg:group-hover:-translate-x-[10px]">
                       <svg
                         viewBox="0 0 85 74"
                         fill="none"
@@ -188,7 +130,6 @@ export const Footer = () => {
                         />
                       </svg>
                     </div>
-
                   </div>
                 </div>
               </div>

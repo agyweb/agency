@@ -32,7 +32,7 @@ export default function WorkCard({
 
   return (
     <motion.div
-      className="w-full"
+      className="w-full workCard"
       variants={workCardVariants}
       initial={"initial"}
       animate={inView ? "visible" : "hidden"}

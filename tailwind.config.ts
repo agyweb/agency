@@ -24,9 +24,11 @@ const config = {
         "8m": "830px",
         "7m": "730px",
         "6m": "630px",
-        "5m": "530px",
+        "5m": "500px",
         "4m": "430px",
         "3m": "330px",
+        "1m": "1100px",
+        "14m": "1430px",
         "2m": "230px",
       },
       colors: {
@@ -34,10 +36,6 @@ const config = {
         gry: "#F4F4F4",
         black: "#0D0E13",
         foreground: "hsl(var(--foreground))",
-      },
-      screens: {
-        "5m": "500px",
-        "1m": "1100px",
       },
       fontFamily: {
         satoshi: "var(--satoshi-font)",

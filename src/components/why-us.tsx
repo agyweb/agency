@@ -13,24 +13,6 @@ import tech from "../../public/why-us/tech.svg";
 import expertise from "../../public/why-us/expertise.svg";
 import { Tilt } from "react-tilt";
 
-const variants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 100,
-    filter: "blur(5px)",
-  },
-
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
-
 const tiltOptions = {
   reverse: false, // reverse the tilt direction
   max: 25, // max tilt rotation (degrees)
@@ -45,7 +27,7 @@ const tiltOptions = {
 
 export default function WhyUs() {
   return (
-    <div className="relative bg-white">
+    <div className="relative bg-white" id="why-us">
       <div className="box py-[35px] pb-[50px] sm:py-[70px] sm:pb-[85px]">
         <div className="flex w-full flex-col items-center justify-between gap-y-3 text-center text-black sm:flex-row sm:text-left">
           <h1 className="w-full text-center font-swearDisplay text-6xl font-bold leading-none tracking-wide sm:w-fit sm:text-7xl md:text-[76px] lg:text-[90px] xl:text-[95px]">
@@ -76,6 +58,25 @@ export function WhyUsCard({
 }) {
   const cardRef = useRef(null);
   const inView = useInView(cardRef, { once: true, amount: 0.1 });
+
+  const variants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+      filter: "blur(5px)",
+    },
+
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: index * 0.1, // Cap the delay at 0.6 seconds
+      },
+    },
+  };
 
   return (
     <Tilt options={tiltOptions}>

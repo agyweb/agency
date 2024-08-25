@@ -4,7 +4,7 @@ import WorkCard from "./work-card";
 
 export default function Work() {
   return (
-    <div className="bg-gry relative">
+    <div className="bg-gry relative work" id="work">
       <div className="box py-[35px] pb-[50px] sm:py-[70px] sm:pb-[85px]">
         <div className="flex w-full flex-col items-center justify-between gap-y-3 text-center text-black sm:flex-row sm:text-left">
           <h1 className="w-full text-center font-swearDisplay text-6xl font-bold leading-none tracking-wide sm:w-fit sm:text-7xl md:text-[76px] lg:text-[90px] xl:text-[95px]">
