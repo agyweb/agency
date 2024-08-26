@@ -7,11 +7,22 @@ import { cn } from "@/lib/utils";
 import { useNav } from "@/store/nav-menu-slice";
 import { useEffect, useState } from "react";
 import { links } from "@/constants/links";
+import { useLenisStore } from "@/store/lenis-slice";
 
 const NavbarMenu = () => {
   const { isOpen, toggle } = useNav((state) => state);
 
   const [activeSection, setActiveSection] = useState("");
+
+  const { lenis } = useLenisStore();
+
+  useEffect(() => {
+    if (isOpen && lenis) {
+      lenis.stop();
+    } else if (!isOpen && lenis) {
+      lenis.start();
+    }
+  }, [isOpen, lenis]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,7 +36,7 @@ const NavbarMenu = () => {
           }
         });
       },
-      { threshold: 0.2 },
+      { threshold: 0.15 },
     );
 
     links.forEach((link) => {
@@ -84,7 +95,7 @@ const NavbarMenu = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 z-[200] h-screen w-full origin-top bg-white px-8 py-[38px] text-black"
+            className="fixed left-0 top-0 z-[200] h-dvh w-full origin-top bg-white px-8 py-[38px] text-black"
           >
             <div
               style={{
@@ -130,7 +141,11 @@ const NavbarMenu = () => {
               >
                 {links.map((link) => {
                   return (
-                    <div className="overflow-hidden" key={link.href}>
+                    <div
+                      className="overflow-hidden"
+                      onClick={toggle}
+                      key={link.href}
+                    >
                       <MobileNavLink
                         state={activeSection}
                         name={link.name}

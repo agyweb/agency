@@ -1,14 +1,19 @@
 "use client";
 
+import { useLenisStore } from "@/store/lenis-slice";
 import Lenis from "@studio-freight/lenis";
-import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import  { useEffect } from "react";
+
+
 
 export default function SmoothScroll() {
+  const { setLenis } = useLenisStore();
+
   useEffect(() => {
     const lenis = new Lenis();
 
     lenis.on("scroll", (e: any) => {
+      // Your scroll event handling here
     });
 
     function raf(time: number) {
@@ -18,22 +23,18 @@ export default function SmoothScroll() {
 
     requestAnimationFrame(raf);
 
+    // Store the Lenis instance in the global store
+    setLenis(lenis);
 
-    const handleLogoClick = (e:any) => {
-
+    const handleLogoClick = (e: any) => {
       e.preventDefault();
-
       lenis.scrollTo(0, {
         duration: 1.2,
         easing: (t) => Math.sin((t * Math.PI) / 2),
-        
       });
-
-      // window.scrollTo({top:0,behavior:'instant'})
     }
 
-    document.querySelector('.logo')?.addEventListener('click',handleLogoClick)
-
+    document.querySelector('.logo')?.addEventListener('click', handleLogoClick);
 
     document.querySelectorAll('.navLink').forEach((link) => {
       link.addEventListener("click", (e) => {
@@ -41,14 +42,13 @@ export default function SmoothScroll() {
         const href = link.getAttribute("href");
         const target = href ? document.querySelector(href) : null;
         if (!target) return;
-    
+
         let offsetTop = (target as HTMLElement).offsetTop;
-    
-        // Add 50px offset for the services section
+
         if (href === "#services" && window.innerWidth >= 1420) {
           offsetTop += 120;
         }
-    
+
         lenis.scrollTo(offsetTop, {
           duration: 1.2,
           easing: (t) => Math.sin((t * Math.PI) / 2),
@@ -56,10 +56,11 @@ export default function SmoothScroll() {
       });
     });
 
+    // Clean up
+    return () => {
+      lenis.destroy();
+    };
+  }, [setLenis]);
 
-  });
-
-
-
-  return <></>;
+  return null;
 }
