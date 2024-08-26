@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -78,7 +79,7 @@ export default function HeaderComp() {
         opacity: 1,
       }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="fixed top-0 z-[200] w-full"
+      className="fixed top-0 z-[60] w-full"
     >
       <motion.div
         animate={{
