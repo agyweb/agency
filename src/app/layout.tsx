@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import SmoothScroll from "@/components/smooth-scroll";
 import HeaderComp from "@/components/header";
 import Cursor from "@/components/cursor";
+import NavbarMenu from "@/components/nav-menu";
 
 const satoshi = localFont({
   src: [
@@ -54,6 +55,7 @@ export default function RootLayout({
         className={`${satoshi.variable} ${swearDisplay.variable} scrollbar-hidden relative overflow-x-hidden font-satoshi`}
       >
         <HeaderComp />
+        <NavbarMenu />
         {children}
         <Cursor />
         <SmoothScroll />
