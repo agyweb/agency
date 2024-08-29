@@ -2,39 +2,37 @@ export const services: CardsType = [
   {
     title: "Web Development",
     description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised waffling too much. Lorem Ipsum available, but the majority",
+      "We create stunning, user-friendly websites that captivate visitors and grow your business online. We develop everything from simple landing pages to complex web applications, ensuring your site looks great, functions smoothly, and delivers a top-notch user experience.",
     img: "web",
   },
   {
     title: "UI/UX Design",
-description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised waffling too much. Lorem Ipsum available, but the majority",
+    description:
+      "We design beautiful, intuitive interfaces that make your website a delight to explore. We focus on creating visually appealing layouts and seamless user journeys, ensuring your site not only looks fantastic but also keeps visitors engaged, encouraging them to return.",
     img: "design",
   },
   {
-    title: "hosting & domain",
-description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised waffling too much. Lorem Ipsum available, but the majority",
+    title: "Hosting & Domain",
+    description:
+      "We keep your website online, running smoothly, and easy to find. Our reliable hosting ensures quick loading and security. We also assist in choosing and managing a memorable domain name, making it simple for customers to find and remember your online presence.",
     img: "host",
   },
   {
     title: "SEO Optimization",
-description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised waffling too much. Lorem Ipsum available, but the majority",
+    description:
+      "We help more people discover your website by boosting its visibility in search results. We use proven techniques to optimize your site's content and structure, making it more attractive to search engines, resulting in more potential customers finding you online.",
     img: "seo",
   },
   {
     title: "E-commerce",
-description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised waffling too much. Lorem Ipsum available, but the majority",
+    description:
+      "We build online stores that make selling your products a breeze. Our ecommerce solutions beautifully showcase your items, effortlessly manage inventory, and ensure a smooth checkout process. We help convert your website visitors into satisfied, paying customers.",
     img: "ecomm",
   },
   {
     title: "Headless CMS",
-description:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised waffling too much. Lorem Ipsum available, but the majority",
+    description:
+      "We implement a flexible content management system that lets you easily update your website's content. Ensuring consistent branding and efficient content management. It's perfect for businesses wanting an efficient way to manage their website content easily.",
     img: "cms",
   },
 ];
-
-

@@ -39,7 +39,7 @@ export default function WhyUs() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 md:mt-20 1m:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 md:mt-20 xl:grid-cols-3">
           {whyUs.map((item, index) => (
             <WhyUsCard key={index} index={index + 1} whyUs={item} />
           ))}

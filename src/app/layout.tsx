@@ -42,8 +42,19 @@ const swearDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "agyweb",
-  description: "agyweb is a web development agency, we build websites and web applications for businesses and individuals.",
+  title: "Agyweb | Web & Design Agency",
+  description:
+    "Agyweb crafts cutting-edge websites and web applications tailored for businesses and individuals. Transform your online presence with our expert team's modern, responsive, and user-centric solutions.",
+  keywords: [
+    "web development agency",
+    "web design",
+    "responsive design",
+    "SEO",
+    "web applications",
+    "digital solutions",
+    "web agency",
+    "design agency",
+  ],
 };
 
 export default function RootLayout({
