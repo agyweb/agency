@@ -119,7 +119,7 @@ export function WhyUsCard({
               {title}
             </h3>
 
-            <p className="mt-[16px] text-[14px] leading-[2.2] text-black opacity-90 sm:text-[15px] lg:text-[16px]">
+            <p className="mt-[16px] text-[14px] leading-[2.2] text-black opacity-90 sm:break-all sm:text-[15px] lg:text-[16px] 14m:break-keep">
               {description}
             </p>
           </div>

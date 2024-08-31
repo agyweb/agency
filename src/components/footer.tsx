@@ -92,13 +92,13 @@ export const Footer = () => {
                     </div>
 
                     <div className="flex items-center gap-x-5 text-[14px] md:gap-x-7 md:text-[15px] 9m:gap-x-8 lg:text-[16px]">
-                      <div className="underline_hover lnk after:-bottom-1 after:h-[1px] cursor-pointer">
+                      <div className="underline_hover lnk cursor-pointer after:-bottom-1 after:h-[1px]">
                         Instagram
                       </div>
-                      <div className="underline_hover lnk after:-bottom-1 after:h-[1px] cursor-pointer">
+                      <div className="underline_hover lnk cursor-pointer after:-bottom-1 after:h-[1px]">
                         LinkedIn
                       </div>
-                      <div className="underline_hover lnk after:-bottom-1 after:h-[1px] cursor-pointer">
+                      <div className="underline_hover lnk cursor-pointer after:-bottom-1 after:h-[1px]">
                         X/Twitter
                       </div>
                     </div>
@@ -112,12 +112,12 @@ export const Footer = () => {
                       <p className="font-satoshi text-[13px] tracking-tighter sm:text-[13.5px] md:text-[14px] 9m:text-[14.5px] lg:pl-[3px] lg:text-[16px]">
                         Got a project in mind ?
                       </p>
-                      <div className="text-4xl font-bold tracking-tight 5m:text-5xl sm:text-6xl md:text-[67px] 9m:text-[83px] lg:text-8xl">
+                      <div className="cn text-4xl font-bold tracking-tight 5m:text-5xl sm:text-6xl md:text-[67px] 9m:text-[83px] lg:text-8xl">
                         CONTACT US
                       </div>
                     </div>
 
-                    <div className="mb-[2px] size-8 transition-all duration-300 group-hover:-translate-x-1 group-hover:rotate-[40deg] 5m:mb-0 5m:size-[40px] 5m:group-hover:-translate-x-[5px] sm:size-[50px] md:size-[58px] md:group-hover:-translate-x-[7px] 9m:mb-[2px] 9m:size-[69px] 9m:group-hover:-translate-x-[8px] lg:mb-0 lg:mt-[1px] lg:size-[82px] lg:group-hover:-translate-x-[10px]">
+                    <div className="cn-arrow mb-[2px] size-8 transition-all duration-300 group-hover:-translate-x-1 group-hover:rotate-[40deg] 5m:mb-0 5m:size-[40px] 5m:group-hover:-translate-x-[5px] sm:size-[50px] md:size-[58px] md:group-hover:-translate-x-[7px] 9m:mb-[2px] 9m:size-[69px] 9m:group-hover:-translate-x-[8px] lg:mb-0 lg:mt-[1px] lg:size-[82px] lg:group-hover:-translate-x-[10px]">
                       <svg
                         viewBox="0 0 85 74"
                         fill="none"

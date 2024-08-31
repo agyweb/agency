@@ -215,3 +215,27 @@ a[href="https://neat.firecms.co"]
     @apply hidden;
   }
 }
+
+@media screen and (min-width: 1200px) and (max-height: 800px) {
+  .heroContainer {
+    @apply gap-y-[45px];
+  }
+
+  .heroHeight {
+    @apply -mt-[50px];
+  }
+
+  .heroButton button {
+    @apply !size-[130px];
+  }
+}
+
+@media screen and (min-width: 1200px) and (min-height: 670px) and (max-height: 750px) {
+  .cn {
+    @apply !text-[83px];
+  }
+
+  .cn-arrow {
+    @apply !mb-[2px] !size-[69px] group-hover:!-translate-x-[8px];
+  }
+}

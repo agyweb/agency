@@ -196,7 +196,7 @@ function GridServices() {
         </div>
 
         {/* This is the part that will have work cards */}
-        <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 md:mt-20 1m:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 md:mt-20 xl:grid-cols-3">
           {services.map((service, index) => (
             <GridServiceCard key={index} service={service} index={index + 1} />
           ))}

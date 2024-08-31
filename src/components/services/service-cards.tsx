@@ -76,7 +76,7 @@ export function GridServiceCard({
             {title}
           </h3>
 
-          <p className="mt-[16px] sm:break-all text-[14px] leading-[2.2] text-black opacity-90 sm:text-[15px] lg:text-[16px]">
+          <p className="mt-[16px] sm:break-all 14m:break-keep text-[14px] leading-[2.2] text-black opacity-90 sm:text-[15px] lg:text-[16px]">
             {description}
           </p>
         </div>
