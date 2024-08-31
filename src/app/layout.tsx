@@ -5,6 +5,7 @@ import SmoothScroll from "@/components/smooth-scroll";
 import HeaderComp from "@/components/header";
 import Cursor from "@/components/cursor";
 import NavbarMenu from "@/components/nav-menu";
+import { Analytics } from '@vercel/analytics/react';
 
 const satoshi = localFont({
   src: [
@@ -83,6 +84,7 @@ export default function RootLayout({
         {children}
         <Cursor />
         <SmoothScroll />
+        <Analytics />
       </body>
     </html>
   );
