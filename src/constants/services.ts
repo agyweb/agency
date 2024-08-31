@@ -2,7 +2,7 @@ export const services: CardsType = [
   {
     title: "Web Development",
     description:
-      "We create stunning, user-friendly websites that captivate visitors and grow your business online. We develop everything from simple landing pages to complex web applications, ensuring your site looks great, functions smoothly, and delivers a top-notch user experience.",
+      "We create stunning, user-friendly websites that captivate visitors and grow your business. We develop everything from simple landing pages to complex web applications, ensuring your site not only looks great but functions well, and delivers outstanding results.",
     img: "web",
   },
   {
@@ -14,7 +14,7 @@ export const services: CardsType = [
   {
     title: "Hosting & Domain",
     description:
-      "We keep your website online, running smoothly, and easy to find. Our reliable hosting ensures quick loading and security. We also assist in choosing and managing a memorable domain name, making it simple for customers to find and remember your online presence.",
+      "We keep your website online, running smoothly, and easy to find. Our reliable hosting ensures quick loading and security. We also assist in choosing and managing a memorable domain name, making it easy for customers to find and remember you online.",
     img: "host",
   },
   {

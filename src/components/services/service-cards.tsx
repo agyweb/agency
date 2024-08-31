@@ -48,7 +48,7 @@ export function GridServiceCard({
   return (
     <Tilt options={tiltOptions}>
       <motion.div
-        className={`relative  h-auto w-full shrink-0 rounded-lg bg-gry px-7 py-6 [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]`}
+        className={`relative h-auto w-full shrink-0 rounded-lg bg-gry px-7 py-6 [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]`}
         variants={variants}
         initial={"initial"}
         animate={inView ? "visible" : "hidden"}
@@ -76,7 +76,7 @@ export function GridServiceCard({
             {title}
           </h3>
 
-          <p className="mt-[16px] sm:break-all 14m:break-keep text-[14px] leading-[2.2] text-black opacity-90 sm:text-[15px] lg:text-[16px]">
+          <p className="mt-[16px] hyphens-auto text-[14px] leading-[2.2] text-black opacity-90 sm:text-[15px] lg:text-[16px]">
             {description}
           </p>
         </div>
