@@ -55,6 +55,19 @@ export const metadata: Metadata = {
     "web agency",
     "design agency",
   ],
+  // openGraph: {
+  //   title: "Agyweb | Web & Design Agency",
+  //   description:
+  //     "Agyweb crafts cutting-edge websites and web applications tailored for businesses and individuals. Transform your online presence with our expert team's modern, responsive, and user-centric solutions.",
+  //   images: [
+  //     {
+  //       url: "/public/opengraph-image.png",
+  //       width: 1200,
+  //       height: 630,
+  //       alt: "Agyweb | Web & Design Agency",
+  //     },
+  //   ],
+  // },
 };
 
 export default function RootLayout({
