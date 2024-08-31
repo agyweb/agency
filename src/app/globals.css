@@ -1,7 +1,241 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.linkStroke {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.45px #111111;
+}
+
+.navLink {
+  @apply text-black;
+}
+
+.navLink.activeLink {
+  @apply text-ornge;
+}
+
+.bg-blur {
+  backdrop-filter: blur(4px);
+}
+
+.heroHeight {
+  height: calc(100dvh - 120px);
+}
 
 .hero_text {
   background-image: linear-gradient(to right, #702b08 1%, #ff6314 100%);
+}
+
+.box {
+  @apply container max-w-[1300px];
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
+
+.services_container {
+  min-height: 300vh;
+  min-height: 300svh;
+}
+
+.services_cards {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+a[href="https://neat.firecms.co"]
+{
+  @apply !hidden;
+}
+
+.custom-shape-divider-top-1722976890 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1722976890 svg {
+  position: relative;
+  display: block;
+  width: calc(274% + 1.3px);
+  height: 154px;
+}
+
+/* .custom-shape-divider-top-1722976890 .shape-fill {
+  fill: #222;
+} */
+
+.underline_hover {
+  /* display: inline-flex; */
+  position: relative;
+  text-decoration: none;
+}
+.underline_hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: -15px;
+  left: 0;
+  background: currentcolor;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+.underline_hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* .bg-blur {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+} */
+@media (max-width: 512px) {
+  .heroContainer {
+    @apply gap-y-[3.5rem];
+  }
+
+  .heroTitle {
+    @apply text-[44px];
+  }
+
+  .heroSubTitle {
+    @apply text-sm;
+  }
+}
+
+@media (max-width: 422px) {
+  .heroContainer {
+    @apply gap-y-[3.5rem];
+  }
+
+  .heroTitle {
+    @apply text-[38px];
+  }
+
+  .heroSubTitle {
+    @apply text-xs;
+  }
+}
+
+@media (max-height: 720px) {
+  .heroTitle {
+    @apply text-[28px];
+  }
+
+  .heroSubTitle {
+    @apply text-xs;
+  }
+}
+
+@media (min-height: 930px) and (max-width: 432px) {
+  .heroContainer {
+    @apply gap-y-16;
+  }
+
+  .heroTitle {
+    @apply text-[42px];
+  }
+
+  .heroSubTitle {
+    @apply text-[15.2px];
+  }
+}
+
+@media (min-height: 914px) and (max-width: 414px) {
+  .heroContainer {
+    @apply gap-y-16;
+  }
+
+  .heroTitle {
+    @apply text-[42px];
+  }
+
+  .heroSubTitle {
+    @apply text-[14.8px];
+  }
+}
+
+@media (min-height: 738px) and (max-width: 362px) {
+  .heroContainer {
+    @apply gap-y-14;
+  }
+
+  .heroTitle {
+    @apply text-[34px];
+  }
+
+  .heroSubTitle {
+    @apply text-xs;
+  }
+}
+
+@media (min-width: 512px) and (max-width: 640px) {
+  .heroTitle {
+    @apply text-[54px];
+  }
+
+  .heroSubTitle {
+    @apply text-base;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .cursor {
+    @apply hidden;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-height: 800px) {
+  .heroContainer {
+    @apply gap-y-[45px];
+  }
+
+  .heroHeight {
+    @apply -mt-[50px];
+  }
+
+  .heroButton button {
+    @apply !size-[130px];
+  }
+}
+
+@media screen and (min-width: 1200px) and (min-height: 670px) and (max-height: 750px) {
+  .cn {
+    @apply !text-[83px];
+  }
+
+  .cn-arrow {
+    @apply !mb-[2px] !size-[69px] group-hover:!-translate-x-[8px];
+  }
 }

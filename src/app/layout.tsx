@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import SmoothScroll from "@/components/smooth-scroll";
+import HeaderComp from "@/components/header";
+import Cursor from "@/components/cursor";
+import NavbarMenu from "@/components/nav-menu";
 
 const satoshi = localFont({
   src: [
@@ -38,19 +42,34 @@ const swearDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Agency",
-  description: "A website for an agency.",
+  title: "Agyweb | Web & Design Agency",
+  description:
+    "Agyweb crafts cutting-edge websites and web applications tailored for businesses and individuals. Transform your online presence with our expert team's modern, responsive, and user-centric solutions.",
+  keywords: [
+    "web development agency",
+    "web design",
+    "responsive design",
+    "SEO",
+    "web applications",
+    "digital solutions",
+    "web agency",
+    "design agency",
+  ],
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${satoshi.variable} ${swearDisplay.variable} font-satoshi`}
+        className={`${satoshi.variable} ${swearDisplay.variable} scrollbar-hidden relative overflow-x-hidden font-satoshi`}
       >
+        <HeaderComp />
+        <NavbarMenu />
         {children}
+        <Cursor />
+        <SmoothScroll />
       </body>
     </html>
   );
