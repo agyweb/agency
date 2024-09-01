@@ -89,7 +89,7 @@ export default function HeaderComp() {
         className={`w-full ${isPastViewport ? "bg-[#ffffffa6] shadow-sm backdrop-blur-[7.6px]" : ""}`}
       >
         <nav
-          className={`container flex max-w-[1300px] items-center justify-between ${
+          className={`box flex  items-center justify-between ${
             isPastViewport ? "py-3" : "py-7"
           }`}
         >

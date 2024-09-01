@@ -72,7 +72,7 @@ export function GridServiceCard({
         />
 
         <div className="-mt-[70px]">
-          <h3 className="relative text-[21px] font-bold uppercase leading-none tracking-tighter text-black sm:text-[20px] md:text-[25px] 1m:text-[24px] xl:text-[28px]">
+          <h3 className="relative card-title text-[21px] font-bold uppercase leading-none tracking-tighter text-black sm:text-[20px] md:text-[25px] 1m:text-[24px] xl:text-[28px]">
             {title}
           </h3>
 
@@ -133,7 +133,7 @@ export function DesktopHorizontallServiceCard({
         priority
       />
 
-      <h3 className="relative -mt-[71px] text-[21px] font-bold uppercase leading-none tracking-tighter text-black sm:-mt-[95px] sm:text-[25px] md:text-[26px] lg:text-[28px]">
+      <h3 className="relative card-title -mt-[71px] text-[21px] font-bold uppercase leading-none tracking-tighter text-black sm:-mt-[95px] sm:text-[25px] md:text-[26px] lg:text-[28px]">
         {title}
       </h3>
       <p className="mt-[16px] text-[14px] leading-[2.2] text-black opacity-90 sm:text-[15px] lg:text-[16px]">

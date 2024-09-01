@@ -108,14 +108,14 @@ export function WhyUsCard({
                         : expertise
             }
             className={cn(
-              "relative mx-auto object-cover object-top 5m:h-[300px]",
+              "relative mx-auto object-cover object-top 5m:h-[260px]",
             )}
             alt={title}
             priority
           />
 
           <div>
-            <h3 className="relative text-[21px] font-bold uppercase leading-none tracking-tighter text-black sm:text-[20px] md:text-[25px] 1m:text-[24px] xl:text-[28px]">
+            <h3 className="relative card-title text-[21px] font-bold uppercase leading-none tracking-tighter text-black sm:text-[20px] md:text-[25px] 1m:text-[24px] xl:text-[28px]">
               {title}
             </h3>
 

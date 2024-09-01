@@ -46,7 +46,7 @@ export default function HeroComp() {
           "[mask-image:radial-gradient(circle_at_center,white_55%,transparent)]",
         )}
       />
-      <div className="heroHeight container relative z-10 max-w-[1300px]">
+      <div className="heroHeight box relative z-10 ">
         <div className="relative z-50 w-full">
           <div className="heroContainer flex flex-col justify-center gap-y-14">
             <motion.div
