@@ -236,6 +236,16 @@ a[href="https://neat.firecms.co"]
   .heroButtonText {
     @apply !text-[16px];
   }
+
+  .heroSubTitle {
+    @apply !text-[20px];
+  }
+}
+
+@media (min-width: 1230px) and (min-height: 600px) and (max-height: 800px) {
+  .heroTitle {
+    @apply !text-[80px] !leading-snug;
+  }
 }
 
 @media (min-width: 1200px) and (min-height: 600px) and (max-height: 800px) {
