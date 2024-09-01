@@ -222,7 +222,7 @@ a[href="https://neat.firecms.co"]
   }
 
   .heroHeight {
-    @apply -mt-[50px];
+    @apply -mt-[50px] bg-red-500;
   }
 
   .heroButton button {
