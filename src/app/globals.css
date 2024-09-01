@@ -216,7 +216,7 @@ a[href="https://neat.firecms.co"]
   }
 }
 
-@media screen and (min-width: 1200px) and (max-height: 800px) {
+@media screen and (min-width: 1200px) and (min-height: 600px) and (max-height: 800px)  {
   .heroContainer {
     @apply gap-y-[45px];
   }
@@ -230,7 +230,7 @@ a[href="https://neat.firecms.co"]
   }
 }
 
-@media screen and (min-width: 1200px) and (min-height: 670px) and (max-height: 750px) {
+@media screen and (min-width: 1200px) and (min-height: 600px) and (max-height: 750px) {
   .cn {
     @apply !text-[83px];
   }
