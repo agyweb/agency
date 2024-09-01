@@ -2,7 +2,7 @@ export const whyUs: CardsType = [
   {
     title: "latest technologies",
     description:
-      "We leverage cutting-edge web technologies to create powerful, efficient websites. By staying ahead of the curve, we ensure your site benefits from the latest advancements. This leads to better performance, enhanced security, and improved user experiences. Our forward approach keeps your digital presence competitive and future-ready.",
+      "We leverage cutting-edge web technologies to create powerful, efficient websites. By staying ahead of the curve, we ensure your site benefits from the latest tech. This leads to better performance, enhanced security, and improved user experience. Our approach keeps your digital presence competitive and future-ready.",
     img: "tech",
   },
   {
@@ -14,13 +14,13 @@ export const whyUs: CardsType = [
   {
     title: "responsive design",
     description:
-      "Our websites adapt seamlessly to all devices, providing an optimal viewing experience on desktops, tablets, and smartphones. This responsive approach ensures your content is easily accessible and looks great, regardless of screen size. By prioritizing mobile-friendly design, we help you reach and engage more users across all platforms.",
+      "Our websites adapt seamlessly to all devices, providing an optimal viewing experience on desktops, tablets, and smartphones. This responsive approach ensures your content is easily accessible and looks great, regardless of size. By prioritizing mobile-friendly design, we help you reach and engage more users across all platforms.",
     img: "responsive",
   },
   {
     title: "tailored solutions",
     description:
-      "We create custom websites tailored to your specific needs and goals. Instead of using one-size-fits-all templates, we develop solutions that align perfectly with your business objectives. Our team works closely with you to understand your requirements and create a unique online presence that sets you apart from the competition.",
+      "We create custom websites tailored to your specific needs and goals. Instead of using one-size-fits-all templates, we develop solutions that align perfectly with your business objectives. Our team works closely with you to understand your requirements and create a unique online presence that sets you apart from others.",
     img: "solutions",
   },
   {
