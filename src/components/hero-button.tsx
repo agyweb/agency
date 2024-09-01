@@ -54,7 +54,7 @@ export default function ArrowButton({
           "absolute flex h-full w-full transform items-center justify-center font-bold transition-all duration-300 ease-in-out group-hover:translate-x-full",
         )}
       >
-        <div className="flex flex-col items-center text-xs font-medium leading-tight tracking-wider sm:text-sm md:text-base lg:text-lg">
+        <div className="heroButtonText flex flex-col items-center text-xs font-medium leading-tight tracking-wider sm:text-sm md:text-base lg:text-lg">
           <span>LET’S</span>
           <span>TALK</span>
         </div>
