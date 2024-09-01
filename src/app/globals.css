@@ -226,7 +226,7 @@ a[href="https://neat.firecms.co"]
   }
 
   .heroButton button {
-    @apply !size-[130px];
+    @apply !size-[110px] bg-green-500;
   }
 }
 
