@@ -218,7 +218,7 @@ a[href="https://neat.firecms.co"]
 
 @media (min-width: 1200px) and (min-height: 600px) and (max-height: 800px)  {
   .heroContainer {
-    @apply !gap-y-[45px];
+    @apply !gap-y-[0px];
   }
 
   .heroHeight {
