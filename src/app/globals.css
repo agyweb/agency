@@ -228,6 +228,10 @@ a[href="https://neat.firecms.co"]
   .heroButton button {
     @apply !size-[110px] bg-green-500;
   }
+
+  .heroTitle {
+    @apply !text-[13px];
+  }
 }
 
 @media (min-width: 1200px) and (min-height: 600px) and (max-height: 750px) {
