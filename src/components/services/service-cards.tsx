@@ -124,7 +124,7 @@ export function DesktopHorizontallServiceCard({
       <Image
         src={`/services/${img}.png`}
         className={cn(
-          "relative bottom-[49px] mx-auto sm:bottom-[60px]",
+          "relative bottom-[49px] mx-auto sm:bottom-[60px] service_image",
           `${img === "design" && "left-[14px]"} ${img === "seo" && "left-1 rotate-[15deg]"}`,
         )}
         alt={title}
@@ -136,7 +136,7 @@ export function DesktopHorizontallServiceCard({
       <h3 className="relative card-title -mt-[71px] text-[21px] font-bold uppercase leading-none tracking-tighter text-black sm:-mt-[95px] sm:text-[25px] md:text-[26px] lg:text-[28px]">
         {title}
       </h3>
-      <p className="mt-[16px] text-[14px] leading-[2.2] text-black opacity-90 sm:text-[15px] lg:text-[16px]">
+      <p className="mt-[16px] hyphens-auto card_desc text-[14px] leading-[2.2] text-black opacity-90 sm:text-[15px] lg:text-[16px]">
         {description}
       </p>
     </motion.div>

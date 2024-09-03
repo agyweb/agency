@@ -12,9 +12,16 @@ import GridPattern from "../magicui/grid-pattern";
 import { cn } from "@/lib/utils";
 
 export default function Services() {
-  const isGridServices = useMediaQuery("(max-width: 1420px)");
+  const isLaptop = useMediaQuery(
+    "(min-width: 1200px) and (min-height: 600px) and (max-height: 800px)",
+  );
+  const isDesktop = useMediaQuery("(min-width: 1420px)");
 
-  return isGridServices ? <GridServices /> : <DesktopHorizontallServices />;
+  return isLaptop || isDesktop ? (
+    <DesktopHorizontallServices />
+  ) : (
+    <GridServices />
+  );
 }
 
 function DesktopHorizontallServices() {
@@ -125,10 +132,10 @@ function DesktopHorizontallServices() {
         className="services_cards sticky top-0 flex flex-col"
         ref={containerRef}
       >
-        <div className="box head flex w-full flex-col items-center justify-between gap-y-3 pt-[35px] text-center text-black sm:flex-row sm:pt-[70px] sm:text-left">
+        <div className="box head flex w-full flex-col items-center justify-between gap-y-3 pt-[35px] text-center text-black sm:flex-row sm:pt-[70px] sm:text-left services_header">
           <h1
             ref={servicesRef}
-            className="w-full text-center font-swearDisplay text-6xl font-bold leading-none tracking-wide sm:w-fit sm:text-7xl md:text-[76px] lg:text-[90px] xl:text-[95px]"
+            className="section_title w-full text-center font-swearDisplay font-bold leading-none tracking-wide sm:w-fit "
           >
             Services
           </h1>
@@ -187,7 +194,7 @@ function GridServices() {
 
       <div className="box relative py-[35px] pb-[50px] sm:py-[70px] sm:pb-[85px]">
         <div className="relative flex w-full flex-col items-center justify-between gap-y-3 text-center text-black sm:flex-row sm:text-left">
-          <h1 className="w-full text-center font-swearDisplay text-6xl font-bold leading-none tracking-wide sm:w-fit sm:text-7xl md:text-[76px] lg:text-[90px] xl:text-[95px]">
+          <h1 className="w-full text-center font-swearDisplay font-bold leading-none tracking-wide sm:w-fit section_title">
             Services
           </h1>
           <p className="text-sm leading-normal tracking-tight opacity-90 sm:relative sm:top-[8px] md:text-[15px] lg:text-[17px] xl:text-[18px]">
