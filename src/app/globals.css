@@ -242,7 +242,7 @@ a[href="https://neat.firecms.co"]
   }
 
   .box {
-    @apply max-w-[1000px]
+    @apply max-w-[1000px];
   }
 
   .card-title {
@@ -250,7 +250,7 @@ a[href="https://neat.firecms.co"]
   }
 
   .section_title {
-    @apply !text-[71px]
+    @apply !text-[71px];
   }
 
   .services_header {
@@ -258,7 +258,7 @@ a[href="https://neat.firecms.co"]
   }
 
   .section {
-    @apply !py-[60px]
+    @apply !py-[60px];
   }
 
   .service_image {
@@ -270,7 +270,7 @@ a[href="https://neat.firecms.co"]
   }
 
   .why_cont {
-    @apply !grid-cols-2
+    @apply !grid-cols-2;
   }
 }
 

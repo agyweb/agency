@@ -12,6 +12,7 @@ import support from "../../public/why-us/support.svg";
 import tech from "../../public/why-us/tech.svg";
 import expertise from "../../public/why-us/expertise.svg";
 import { Tilt } from "react-tilt";
+import { whyUsLaptop } from "@/constants/why-us-laptop";
 
 const tiltOptions = {
   reverse: false, // reverse the tilt direction
@@ -40,7 +41,8 @@ export default function WhyUs() {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 md:mt-20 2xl:grid-cols-3">
-          {whyUs.map((item, index) => (
+          {/* whyUs */}
+          {whyUsLaptop.map((item, index) => (
             <WhyUsCard key={index} index={index + 1} whyUs={item} />
           ))}
         </div>
@@ -108,7 +110,7 @@ export function WhyUsCard({
                         : expertise
             }
             className={cn(
-              "relative mx-auto object-cover object-top 5m:h-[260px]",
+              "relative mx-auto h-[240px] object-contain object-top",
             )}
             alt={title}
             priority

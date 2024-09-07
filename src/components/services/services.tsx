@@ -91,7 +91,6 @@ function DesktopHorizontallServices() {
     };
   }, []);
 
-
   return (
     <div
       className="services_container relative z-[100] bg-white"
@@ -148,7 +147,7 @@ function DesktopHorizontallServices() {
         >
           <motion.div
             style={{ x }}
-            className="flex gap-x-8 sm:gap-x-9 lg:gap-x-10 "
+            className="cards-desktop flex gap-x-8 sm:gap-x-9 lg:gap-x-10"
           >
             {services.map((service, index) => (
               <DesktopHorizontallServiceCard
