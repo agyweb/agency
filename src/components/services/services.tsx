@@ -14,7 +14,7 @@ import { servicesLaptop } from "@/constants/services-laptop";
 
 export default function Services() {
   const isLaptop = useMediaQuery(
-    "(min-width: 1200px) and (min-height: 600px) and (max-height: 800px)",
+    "(min-width: 1300px) and (min-height: 600px) and (max-height: 800px)",
   );
   const isDesktop = useMediaQuery("(min-width: 1420px)");
 
@@ -29,28 +29,22 @@ function DesktopHorizontallServices() {
   const parentRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLHeadingElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-
+  const isLaptop = useMediaQuery(
+    "(min-width: 1300px) and (min-height: 600px) and (max-height: 800px)",
+  );
   const { scrollYProgress } = useScroll({ target: parentRef });
   const [transformValues, setTransformValues] = useState(["0%", "0%"]);
   const [leftPadding, setLeftPadding] = useState(0);
+  const containerMaxWidth = isLaptop ? 1000 : 1300;
+  const extraPercentage = 2.8;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleResize = () => {
       const viewportWidth = window.innerWidth;
       const itemCount = 6; // Number of colored boxes
-      const itemWidth =
-        viewportWidth < 640 ? 280 : viewportWidth < 1024 ? 320 : 350;
-      const gap = viewportWidth < 640 ? 32 : viewportWidth < 1024 ? 36 : 40;
-      const containerWidth = Math.min(viewportWidth, 1300);
-
-      let extraPercentage;
-      if (viewportWidth >= 1024) {
-        extraPercentage = 2.8;
-      } else if (viewportWidth >= 640) {
-        extraPercentage = 3.15;
-      } else {
-        extraPercentage = 3.5;
-      }
+      const itemWidth = 350;
+      const gap = 40;
+      const containerWidth = Math.min(viewportWidth, containerMaxWidth);
 
       const totalWidth = itemWidth * itemCount + gap * (itemCount - 1);
       const endPercentage = -(
@@ -69,7 +63,7 @@ function DesktopHorizontallServices() {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [containerMaxWidth]);
 
   const x = useTransform(scrollYProgress, [0, 1], transformValues);
 
@@ -96,6 +90,7 @@ function DesktopHorizontallServices() {
       }
     };
   }, []);
+
 
   return (
     <div
@@ -146,12 +141,14 @@ function DesktopHorizontallServices() {
         </div>
 
         <div
-          className="flex flex-grow items-center overflow-hidden"
-          style={{ paddingLeft: `${leftPadding}px` }}
+          className="cards_horiz flex flex-grow items-center overflow-hidden"
+          style={{
+            paddingLeft: `${leftPadding}px`,
+          }}
         >
           <motion.div
             style={{ x }}
-            className="cards-desktop flex gap-x-8 sm:gap-x-9 lg:gap-x-10"
+            className="flex gap-x-8 sm:gap-x-9 lg:gap-x-10 "
           >
             {services.map((service, index) => (
               <DesktopHorizontallServiceCard

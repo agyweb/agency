@@ -4,7 +4,7 @@ import { whyUs } from "@/constants/why-us";
 import { cn } from "@/lib/utils";
 import { useInView, motion, Variants } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import design from "../../public/why-us/design.svg";
 import responsive from "../../public/why-us/responsive.svg";
 import solutions from "../../public/why-us/solutions.svg";
@@ -27,7 +27,7 @@ const tiltOptions = {
 
 export default function WhyUs() {
   return (
-    <div className="relative" id="why-us">
+    <div className="relative bg-white" id="why-us">
       <div className="box section py-[35px] pb-[50px] sm:py-[70px] sm:pb-[85px]">
         <div className="flex w-full flex-col items-center justify-between gap-y-3 text-center text-black sm:flex-row sm:text-left">
           <h1 className="section_title w-full text-center font-swearDisplay font-bold leading-none tracking-wide sm:w-fit">

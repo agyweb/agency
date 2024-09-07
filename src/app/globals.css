@@ -216,7 +216,7 @@ a[href="https://neat.firecms.co"]
   }
 }
 
-@media (min-width: 1200px) and (min-height: 600px) and (max-height: 800px) {
+@media (min-width: 1300px) and (min-height: 600px) and (max-height: 800px) {
   .heroContainer {
     @apply !gap-y-[32px];
   }
@@ -230,7 +230,7 @@ a[href="https://neat.firecms.co"]
   }
 
   .heroTitle {
-    @apply !text-[71px] !leading-snug;
+    @apply !text-[64px] !leading-snug;
   }
 
   .heroButtonText {
@@ -242,7 +242,7 @@ a[href="https://neat.firecms.co"]
   }
 
   .box {
-    @apply max-w-[1100px];
+    @apply max-w-[1000px]
   }
 
   .card-title {
@@ -250,7 +250,7 @@ a[href="https://neat.firecms.co"]
   }
 
   .section_title {
-    @apply !text-[75px];
+    @apply !text-[71px]
   }
 
   .services_header {
@@ -258,7 +258,7 @@ a[href="https://neat.firecms.co"]
   }
 
   .section {
-    @apply !py-[50px];
+    @apply !py-[60px]
   }
 
   .service_image {
@@ -268,15 +268,19 @@ a[href="https://neat.firecms.co"]
   .card_desc {
     @apply line-clamp-5 !text-[15px];
   }
+
+  .why_cont {
+    @apply !grid-cols-2
+  }
 }
 
-@media (min-width: 1200px) and (min-height: 600px) and (max-height: 800px) {
+@media (min-width: 1300px) and (min-height: 600px) and (max-height: 800px) {
   .cn {
-    @apply !text-[83px];
+    @apply !text-[75px];
   }
 
   .cn-arrow {
-    @apply !mb-[2px] !size-[69px] group-hover:!-translate-x-[8px];
+    @apply !mb-[0px] !size-[65px] group-hover:!-translate-x-[8px];
   }
 }
 
