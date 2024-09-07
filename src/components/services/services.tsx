@@ -10,6 +10,7 @@ import {
 } from "./service-cards";
 import GridPattern from "../magicui/grid-pattern";
 import { cn } from "@/lib/utils";
+import { servicesLaptop } from "@/constants/services-laptop";
 
 export default function Services() {
   const isLaptop = useMediaQuery(
@@ -132,10 +133,10 @@ function DesktopHorizontallServices() {
         className="services_cards sticky top-0 flex flex-col"
         ref={containerRef}
       >
-        <div className="box head flex w-full flex-col items-center justify-between gap-y-3 pt-[35px] text-center text-black sm:flex-row sm:pt-[70px] sm:text-left services_header">
+        <div className="box head services_header flex w-full flex-col items-center justify-between gap-y-3 pt-[35px] text-center text-black sm:flex-row sm:pt-[70px] sm:text-left">
           <h1
             ref={servicesRef}
-            className="section_title w-full text-center font-swearDisplay font-bold leading-none tracking-wide sm:w-fit "
+            className="section_title w-full text-center font-swearDisplay font-bold leading-none tracking-wide sm:w-fit"
           >
             Services
           </h1>
@@ -150,9 +151,22 @@ function DesktopHorizontallServices() {
         >
           <motion.div
             style={{ x }}
-            className="flex gap-x-8 sm:gap-x-9 lg:gap-x-10"
+            className="cards-desktop flex gap-x-8 sm:gap-x-9 lg:gap-x-10"
           >
             {services.map((service, index) => (
+              <DesktopHorizontallServiceCard
+                key={index}
+                service={service}
+                index={index + 1}
+              />
+            ))}
+          </motion.div>
+
+          <motion.div
+            style={{ x }}
+            className="cards-laptop flex gap-x-8 sm:gap-x-9 lg:gap-x-10"
+          >
+            {servicesLaptop.map((service, index) => (
               <DesktopHorizontallServiceCard
                 key={index}
                 service={service}
@@ -194,7 +208,7 @@ function GridServices() {
 
       <div className="box relative py-[35px] pb-[50px] sm:py-[70px] sm:pb-[85px]">
         <div className="relative flex w-full flex-col items-center justify-between gap-y-3 text-center text-black sm:flex-row sm:text-left">
-          <h1 className="w-full text-center font-swearDisplay font-bold leading-none tracking-wide sm:w-fit section_title">
+          <h1 className="section_title w-full text-center font-swearDisplay font-bold leading-none tracking-wide sm:w-fit">
             Services
           </h1>
           <p className="text-sm leading-normal tracking-tight opacity-90 sm:relative sm:top-[8px] md:text-[15px] lg:text-[17px] xl:text-[18px]">

@@ -27,10 +27,10 @@ const tiltOptions = {
 
 export default function WhyUs() {
   return (
-    <div className="relative bg-white" id="why-us">
-      <div className="box py-[35px] pb-[50px] sm:py-[70px] sm:pb-[85px] section">
+    <div className="relative" id="why-us">
+      <div className="box section py-[35px] pb-[50px] sm:py-[70px] sm:pb-[85px]">
         <div className="flex w-full flex-col items-center justify-between gap-y-3 text-center text-black sm:flex-row sm:text-left">
-          <h1 className="w-full text-center font-swearDisplay section_title font-bold leading-none tracking-wide sm:w-fit ">
+          <h1 className="section_title w-full text-center font-swearDisplay font-bold leading-none tracking-wide sm:w-fit">
             Why us
           </h1>
           <p className="text-sm leading-normal tracking-tight opacity-90 sm:relative sm:top-[8px] md:text-[15px] lg:text-[17px] xl:text-[18px]">
@@ -39,7 +39,7 @@ export default function WhyUs() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 md:mt-20 xl:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 md:mt-20 2xl:grid-cols-3">
           {whyUs.map((item, index) => (
             <WhyUsCard key={index} index={index + 1} whyUs={item} />
           ))}
@@ -115,7 +115,7 @@ export function WhyUsCard({
           />
 
           <div>
-            <h3 className="relative card-title text-[21px] font-bold uppercase leading-none tracking-tighter text-black sm:text-[20px] md:text-[25px] 1m:text-[24px] xl:text-[28px]">
+            <h3 className="card-title relative text-[21px] font-bold uppercase leading-none tracking-tighter text-black sm:text-[20px] md:text-[25px] 1m:text-[24px] xl:text-[28px]">
               {title}
             </h3>
 

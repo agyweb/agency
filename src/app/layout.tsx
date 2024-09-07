@@ -5,7 +5,7 @@ import SmoothScroll from "@/components/smooth-scroll";
 import HeaderComp from "@/components/header";
 import Cursor from "@/components/cursor";
 import NavbarMenu from "@/components/nav-menu";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 const satoshi = localFont({
   src: [
