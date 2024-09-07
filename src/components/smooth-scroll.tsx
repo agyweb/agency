@@ -45,6 +45,10 @@ export default function SmoothScroll() {
 
         let offsetTop = (target as HTMLElement).offsetTop;
 
+        if (href === "#services" && window.innerWidth >= 1300) {
+          offsetTop += 130;
+        }
+
         if (href === "#services" && window.innerWidth >= 1420) {
           offsetTop += 120;
         }
