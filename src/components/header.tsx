@@ -24,15 +24,15 @@ export default function HeaderComp() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    const navLinks = document.querySelectorAll(".navLink");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        document.querySelector(".activeLink")?.classList.remove("activeLink");
-        link.classList.add("activeLink");
-      });
-    });
-  }, []);
+  // useEffect(() => {
+  //   const navLinks = document.querySelectorAll(".navLink");
+  //   navLinks.forEach((link) => {
+  //     link.addEventListener("click", () => {
+  //       document.querySelector(".activeLink")?.classList.remove("activeLink");
+  //       link.classList.add("activeLink");
+  //     });
+  //   });
+  // }, []);
 
   useMotionValueEvent(scrollY, "change", (currScrollVal) => {
     if (currScrollVal <= viewportHeight) {
