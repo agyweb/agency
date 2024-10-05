@@ -14,7 +14,7 @@ import { servicesLaptop } from "@/constants/services-laptop";
 
 export default function Services() {
   const isLaptop = useMediaQuery(
-    "(min-width: 1300px) and (min-height: 600px) and (max-height: 800px)",
+    "(min-width: 1300px) and (min-height: 630px) and (max-height: 800px)",
   );
   const isDesktop = useMediaQuery("(min-width: 1420px)");
 
@@ -213,7 +213,7 @@ function GridServices() {
         </div>
 
         {/* This is the part that will have work cards */}
-        <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 md:mt-20 xl:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 md:mt-20 xl:grid-cols-3 services_grid_container">
           {services.map((service, index) => (
             <GridServiceCard key={index} service={service} index={index + 1} />
           ))}

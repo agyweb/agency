@@ -216,7 +216,7 @@ a[href="https://neat.firecms.co"]
   }
 }
 
-@media (min-width: 1300px) and (min-height: 600px) and (max-height: 800px) {
+@media (min-width: 1200px) and (min-height: 500px) and (max-height: 800px) {
   .heroContainer {
     @apply !gap-y-[32px];
   }
@@ -253,6 +253,10 @@ a[href="https://neat.firecms.co"]
     @apply !text-[71px];
   }
 
+  .services_grid_container {
+    @apply xl:!grid-cols-2;
+  }
+
   .services_header {
     @apply !pt-[50px];
   }
@@ -274,7 +278,7 @@ a[href="https://neat.firecms.co"]
   }
 }
 
-@media (min-width: 1300px) and (min-height: 600px) and (max-height: 800px) {
+@media (min-width: 1200px) and (min-height: 500px) and (max-height: 800px) {
   .cn {
     @apply !text-[75px];
   }
@@ -296,7 +300,7 @@ a[href="https://neat.firecms.co"]
   @apply invisible hidden;
 }
 
-@media (min-width: 1300px) and (min-height: 600px) and (max-height: 800px) {
+@media (min-width: 1200px) and (min-height: 500px) and (max-height: 800px) {
   .cards-desktop {
     @apply invisible hidden;
   }
